@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/pages/login.dart';
+import 'package:test_app/utils/myroutes.dart';
 import './pages/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     // int age = 24;
     return MaterialApp(
       // themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
         fontFamily: GoogleFonts.lato().fontFamily,
@@ -31,8 +33,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/login',
       routes: {
-        "/home": (context) => const Home(),
-        "/login": (context) => const Login(),
+        MyRoutes.homeRoute: (context) => const Home(),
+        MyRoutes.loginRoute: (context) => const Login(),
       },
     );
   }
